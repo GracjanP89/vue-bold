@@ -7,5 +7,10 @@ export default [{
         icon: 'assignment',
         title: 'Tasks',
         target: 'tasks'
+    },
+    {
+        icon: 'assignment',
+        title: 'Firebase',
+        target: 'firebase'
     }
 ];

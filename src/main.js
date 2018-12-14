@@ -15,6 +15,9 @@ import {
     transitions
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
+import VueFire from 'vuefire'
+
+Vue.use(VueFire)
 
 Vue.use(Vuetify, {
     components: {
