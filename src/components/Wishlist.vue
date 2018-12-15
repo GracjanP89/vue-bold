@@ -1,6 +1,6 @@
 <template>
     <div class="products-wrap">
-        <ProductItem v-for="product in $store.state.wishlist" :data="product" :key="product['.key']" />
+        <ProductItem v-for="product in $store.state.wishlist" :data="product" :wishlistBtn="true" :key="product['.key']" />
     </div>
 </template>
 

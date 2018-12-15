@@ -7,7 +7,13 @@
             <p><span>{{data.name}}</span></p>
             <PriceLabel :dataPrice="data.price" />
             <div v-if="type" class="btn-wrap">
-                <button v-on:click="$store.dispatch('ADD_REMOVE_TO_CART', data)" class="btn-basket">KOSZYK</button><button v-on:click="$store.dispatch('ADD_REMOVE_TO_WISHLIST', data)" class="btn-wishlist">WISHLISTA</button>
+                <button v-on:click="$store.dispatch('ADD_TO_CART', data)" class="btn-basket">KOSZYK</button><button v-on:click="$store.dispatch('ADD_TO_WISHLIST', data)" class="btn-wishlist">WISHLISTA</button>
+            </div>
+            <div v-if="cartBtn" class="btn-wrap">
+                <button v-on:click="$store.dispatch('REMOVE_FROM_CART', data.sku)" class="btn-basket btn-basket-remove">USUN z KOSZYKA</button>
+            </div>
+            <div v-if="wishlistBtn" class="btn-wrap">
+                <button v-on:click="$store.dispatch('REMOVE_FROM_WISHLIST', data.sku)" class="btn-wishlist btn-wishlist-remove">USUN z WISHLISTY</button>
             </div>
             <ProductItemAttr :dataAttr="data.attributes" :key="data.sku" />
         </div>
@@ -21,7 +27,7 @@
 
     export default {
         name: 'ProductItem',
-        props: ['data', 'type'],
+        props: ['data', 'type', 'cartBtn', 'wishlistBtn'],
         components: {
             ProductItemAttr,
             PriceLabel
@@ -56,5 +62,11 @@
     }
     .btn-wrap {
         margin: 5px 0;
+    }
+    .btn-basket-remove {
+        width: 100%;
+    }
+    .btn-wishlist-remove {
+        width: 100%;
     }
 </style>

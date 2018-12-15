@@ -2,7 +2,7 @@
     <div class="products-wrap">
         <div class="product-item-wrap">
             <div class="product-item-head">
-                <div>{{$store.state.cart}}
+                <div>
                 </div>
                 <p><span></span></p>
                 <p><span></span></p>
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <ProductItem v-for="product in products" :data="product" :type="productGroup = true" :key="product['.key']" />
+        <ProductItem v-for="product in products" :data="product" :type="true" :key="product['.key']" />
     </div>
 </template>
 
