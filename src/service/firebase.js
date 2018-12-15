@@ -4,4 +4,3 @@ import config from '../../config/firebase'
 const app = initializeApp(config)
 
 export const db = app.database()
-export const attributeMap = db.ref('attributesIdValue')
