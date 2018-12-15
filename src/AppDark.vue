@@ -59,3 +59,9 @@ export default {
     name: 'AppDark'
 }
 </script>
+
+<style scoped>
+    .layout {
+        width: 100%;
+    }
+</style>

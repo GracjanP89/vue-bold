@@ -22,7 +22,7 @@
                         if (!(binding.value.attributeMap[attrIndex] === 'undefined')) {
                             attrValues = binding.value.attributeMap[attrIndex]['.value'].split('|')
                             attrPos.forEach(function (position) {
-                                parseAttr += attrValues[position]
+                                parseAttr += attrValues[position - 1]
                             })
                             el.innerHTML = parseAttr
                             clearInterval(checkExistOberveObject)

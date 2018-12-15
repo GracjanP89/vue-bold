@@ -1,5 +1,22 @@
 <template>
-    <div>
+    <div class="products-wrap">
+        <div class="product-item-wrap">
+            <div class="product-item-head">
+                <div>
+
+                </div>
+                <p><span></span></p>
+                <p><span></span></p>
+                <div>
+                    <div>browar</div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
         <ProductItem v-for="product in products" :data="product" :key="product['.key']" />
     </div>
 </template>
@@ -24,5 +41,9 @@
 </script>
 
 <style scoped>
-
+    .products-wrap {
+        display: flex;
+        width: 100%;
+        overflow: auto;
+    }
 </style>
