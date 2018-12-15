@@ -16,9 +16,9 @@ import {
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
 import VueFire from 'vuefire'
+import store from './store/store'
 
 Vue.use(VueFire)
-
 Vue.use(Vuetify, {
     components: {
         VApp,
@@ -47,6 +47,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
+    store,
     router,
     components: { App },
     template: '<App/>'

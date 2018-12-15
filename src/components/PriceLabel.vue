@@ -8,7 +8,7 @@
 <script>
     export default {
         name: 'PriceLabel',
-        props: ['dataPrice'],
+        props: ['dataPrice']
     }
 </script>
 

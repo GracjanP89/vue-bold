@@ -6,9 +6,8 @@
             </div>
             <p><span>{{data.name}}</span></p>
             <PriceLabel :dataPrice="data.price" />
-            <div>
-                <button>KOSZYK</button>
-                <button>WISHLISTA</button>
+            <div class="btn-wrap">
+                <button v-on:click="$store.dispatch('ADD_REMOVE_TO_CART', data)" class="btn-basket">KOSZYK</button><button class="btn-wishlist">WISHLISTA</button>
             </div>
             <ProductItemAttr :dataAttr="data.attributes" :key="data.sku" />
         </div>
@@ -37,5 +36,25 @@
     }
     .product-desc {
         min-height: 126px;
+    }
+    .btn-basket {
+        min-height: 45px;
+        background: #dc3545;
+        display: inline-block;
+        width: 49%;
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+    .btn-wishlist {
+        min-height: 45px;
+        background: #0069d9;
+        display: inline-block;
+        width: 49%;
+        box-sizing: border-box;
+        margin: 1%;
+        border-radius: 3px;
+    }
+    .btn-wrap {
+        margin: 5px 0;
     }
 </style>

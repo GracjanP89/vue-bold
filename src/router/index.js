@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Tasks from '@/components/Tasks'
 import Firebase from '@/components/Firebase'
+import Cart from '@/components/Cart'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
         path: '/firebase',
         name: 'Firebase',
         component: Firebase
+    },
+    {
+        path: '/cart',
+        name: 'Cart',
+        component: Cart
     }
     ]
 })

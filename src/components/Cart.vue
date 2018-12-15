@@ -1,0 +1,33 @@
+<template>
+    <div class="products-wrap">
+        <ProductItem v-for="product in $store.state.cart" :data="product" :key="product['.key']" />
+    </div>
+</template>
+
+<script>
+    import ProductItem from './ProductItem'
+
+    export default {
+        name: 'Cart',
+        components: {
+            ProductItem
+        },
+        methods: {
+            changeTableToObj: function (table) {
+                let obj = {}
+                table.forEach(function (el, index) {
+                    obj[index] = el
+                })
+                return obj
+            }
+        }
+    }
+</script>
+
+<style scoped>
+    .products-wrap {
+        display: flex;
+        width: 100%;
+        overflow: auto;
+    }
+</style>

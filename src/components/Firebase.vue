@@ -2,8 +2,7 @@
     <div class="products-wrap">
         <div class="product-item-wrap">
             <div class="product-item-head">
-                <div>
-
+                <div>{{$store.state.cart}}
                 </div>
                 <p><span></span></p>
                 <p><span></span></p>
