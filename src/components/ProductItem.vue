@@ -6,8 +6,8 @@
             </div>
             <p><span>{{data.name}}</span></p>
             <PriceLabel :dataPrice="data.price" />
-            <div class="btn-wrap">
-                <button v-on:click="$store.dispatch('ADD_REMOVE_TO_CART', data)" class="btn-basket">KOSZYK</button><button class="btn-wishlist">WISHLISTA</button>
+            <div v-if="type" class="btn-wrap">
+                <button v-on:click="$store.dispatch('ADD_REMOVE_TO_CART', data)" class="btn-basket">KOSZYK</button><button v-on:click="$store.dispatch('ADD_REMOVE_TO_WISHLIST', data)" class="btn-wishlist">WISHLISTA</button>
             </div>
             <ProductItemAttr :dataAttr="data.attributes" :key="data.sku" />
         </div>
@@ -21,7 +21,7 @@
 
     export default {
         name: 'ProductItem',
-        props: ['data'],
+        props: ['data', 'type'],
         components: {
             ProductItemAttr,
             PriceLabel

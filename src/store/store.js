@@ -21,11 +21,25 @@ export default new Vuex.Store({
             if(!isINCart){
                 state.cart.push(data)
             }
+        },
+        ADD_REMOVE_TO_WISHLIST (state, data) {
+            let isINWish = false
+            state.wishlist.forEach(function(el){
+                if(Number(el.sku) == Number(data.sku)) {
+                    isINWish = true
+                }
+            })
+            if(!isINWish){
+                state.wishlist.push(data)
+            }
         }
     },
     actions: {
         ADD_REMOVE_TO_CART: ({commit}, data) => {
             commit('ADD_REMOVE_TO_CART', data)
+        },
+        ADD_REMOVE_TO_WISHLIST: ({commit}, data) => {
+            commit('ADD_REMOVE_TO_WISHLIST', data)
         }
     }
 })

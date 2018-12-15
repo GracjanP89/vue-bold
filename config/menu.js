@@ -17,5 +17,10 @@ export default [{
         icon: 'assignment',
         title: 'Cart',
         target: 'cart'
+    },
+    {
+        icon: 'assignment',
+        title: 'Wishlist',
+        target: 'wishlist'
     }
 ];

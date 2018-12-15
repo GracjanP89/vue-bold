@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <ProductItem v-for="product in products" :data="product" :key="product['.key']" />
+        <ProductItem v-for="product in products" :data="product" :type="productGroup = true" :key="product['.key']" />
     </div>
 </template>
 

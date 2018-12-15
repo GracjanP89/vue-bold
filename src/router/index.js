@@ -5,6 +5,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Tasks from '@/components/Tasks'
 import Firebase from '@/components/Firebase'
 import Cart from '@/components/Cart'
+import Wishlist from '@/components/Wishlist'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
         path: '/cart',
         name: 'Cart',
         component: Cart
+    },
+    {
+        path: '/wishlist',
+        name: 'Wishlist',
+        component: Wishlist
     }
     ]
 })
