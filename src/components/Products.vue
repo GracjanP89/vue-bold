@@ -1,28 +1,14 @@
 <template>
     <div class="products-wrap">
-        <div class="product-item-wrap">
-            <div class="product-item-head">
-                <div>
-                </div>
-                <p><span></span></p>
-                <p><span></span></p>
-                <div>
-                    <div>browar</div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-        </div>
+        <ProducsLabels :label="'Products'"/>
         <ProductItem v-for="product in products" :data="product" :productBtn="true" :key="product['.key']" />
     </div>
 </template>
 
 <script>
-    import ProductItem from './ProductItem'
     import {db} from '../service/firebase'
+    import ProductItem from './ProductItem'
+    import ProducsLabels from './ProductsLabels'
 
     export default {
         name: 'Firebase',
@@ -30,7 +16,8 @@
             products: db.ref('products')
         },
         components: {
-            ProductItem
+            ProductItem,
+            ProducsLabels
         }
     }
 </script>
@@ -40,5 +27,6 @@
         display: flex;
         width: 100%;
         overflow: auto;
+        position: relative;
     }
 </style>
