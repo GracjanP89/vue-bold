@@ -10,8 +10,8 @@ export default [{
     },
     {
         icon: 'assignment',
-        title: 'Firebase',
-        target: 'firebase'
+        title: 'Products',
+        target: 'products'
     },
     {
         icon: 'assignment',

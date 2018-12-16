@@ -11,15 +11,6 @@
         name: 'Cart',
         components: {
             ProductItem
-        },
-        methods: {
-            changeTableToObj: function (table) {
-                let obj = {}
-                table.forEach(function (el, index) {
-                    obj[index] = el
-                })
-                return obj
-            }
         }
     }
 </script>

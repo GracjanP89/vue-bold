@@ -3,7 +3,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Tasks from '@/components/Tasks'
-import Firebase from '@/components/Firebase'
+import Products from '@/components/Products'
 import Cart from '@/components/Cart'
 import Wishlist from '@/components/Wishlist'
 
@@ -21,9 +21,9 @@ export default new Router({
         component: Tasks
     },
     {
-        path: '/firebase',
-        name: 'Firebase',
-        component: Firebase
+        path: '/products',
+        name: 'Products',
+        component: Products
     },
     {
         path: '/cart',

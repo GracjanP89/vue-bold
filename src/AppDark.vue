@@ -1,5 +1,3 @@
-
-
 <template>
 
 <v-app id="inspire" dark>
@@ -11,6 +9,8 @@
                 </v-list-tile-action>
                 <v-list-tile-content>
                     <v-list-tile-title v-text="item.title"></v-list-tile-title>
+                    <span v-if="item.title === 'Cart'">{{ GET_CART_LENGTH }}</span>
+                    <span v-else-if="item.title === 'Wishlist'">{{ GET_WISHLIST_LENGTH }}</span>
                 </v-list-tile-content>
             </v-list-tile>
         </v-list>
@@ -54,6 +54,14 @@ export default {
             this.$router.push({
                 path: nav
             })
+        }
+    },
+    computed: {
+        GET_CART_LENGTH () {
+            return this.$store.getters.GET_CART_LENGTH
+        },
+        GET_WISHLIST_LENGTH () {
+            return this.$store.getters.GET_WISHLIST_LENGTH
         }
     },
     name: 'AppDark'

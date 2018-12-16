@@ -1,12 +1,10 @@
-import dataProducts from '../../static/data.json'
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
     wishlist: [],
-    cart: [],
-    products: dataProducts.products
+    cart: []
 }
 export default new Vuex.Store({
     state,
@@ -14,7 +12,7 @@ export default new Vuex.Store({
         ADD_TO_CART (state, data) {
             let isINCart = false
             state.cart.forEach(function (el) {
-                if (Number(el.sku) == Number(data.sku)) {
+                if (Number(el.sku) === Number(data.sku)) {
                     isINCart = true
                 }
             })
@@ -24,7 +22,7 @@ export default new Vuex.Store({
         },
         REMOVE_FROM_CART (state, sku) {
             state.cart = state.cart.filter((el) => {
-                if (!(Number(el.sku) == Number(sku))) {
+                if (!(Number(el.sku) === Number(sku))) {
                     return el
                 }
             })
@@ -32,7 +30,7 @@ export default new Vuex.Store({
         ADD_TO_WISHLIST (state, data) {
             let isINWish = false
             state.wishlist.forEach(function (el) {
-                if (Number(el.sku) == Number(data.sku)) {
+                if (Number(el.sku) === Number(data.sku)) {
                     isINWish = true
                 }
             })
@@ -42,7 +40,7 @@ export default new Vuex.Store({
         },
         REMOVE_FROM_WISHLIST (state, sku) {
             state.wishlist = state.wishlist.filter((el) => {
-                if (!(Number(el.sku) == Number(sku))) {
+                if (!(Number(el.sku) === Number(sku))) {
                     return el
                 }
             })
@@ -61,5 +59,13 @@ export default new Vuex.Store({
         REMOVE_FROM_WISHLIST: ({commit}, sku) => {
             commit('REMOVE_FROM_WISHLIST', sku)
         }
+    },
+    getters: {
+        GET_CART_LENGTH: (state) => {
+            return state.cart.length
+        },
+        GET_WISHLIST_LENGTH: (state) => {
+            return state.wishlist.length
+        }
     }
-})
+    })

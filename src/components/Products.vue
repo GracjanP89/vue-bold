@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <ProductItem v-for="product in products" :data="product" :type="true" :key="product['.key']" />
+        <ProductItem v-for="product in products" :data="product" :productBtn="true" :key="product['.key']" />
     </div>
 </template>
 
@@ -26,10 +26,6 @@
 
     export default {
         name: 'Firebase',
-        data () {
-            return {
-            }
-        },
         firebase: {
             products: db.ref('products')
         },

@@ -6,7 +6,7 @@
             </div>
             <p><span>{{data.name}}</span></p>
             <PriceLabel :dataPrice="data.price" />
-            <div v-if="type" class="btn-wrap">
+            <div v-if="productBtn" class="btn-wrap">
                 <button v-on:click="$store.dispatch('ADD_TO_CART', data)" class="btn-basket">KOSZYK</button><button v-on:click="$store.dispatch('ADD_TO_WISHLIST', data)" class="btn-wishlist">WISHLISTA</button>
             </div>
             <div v-if="cartBtn" class="btn-wrap">
@@ -27,7 +27,7 @@
 
     export default {
         name: 'ProductItem',
-        props: ['data', 'type', 'cartBtn', 'wishlistBtn'],
+        props: ['data', 'productBtn', 'cartBtn', 'wishlistBtn'],
         components: {
             ProductItemAttr,
             PriceLabel
